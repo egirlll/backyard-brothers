@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/api/quote", "destination": "/api/quote" }
+  ],
+  "functions": {
+    "api/quote.js": {
+      "runtime": "@vercel/node@3.0.0"
+    }
+  }
+}

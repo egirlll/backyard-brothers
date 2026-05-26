@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       console.error('Resend error:', data);
-      return res.status(500).json({ error: 'Failed to send email' });
+      return res.status(500).json({ error: 'Failed to send email', detail: data });
     }
 
     return res.status(200).json({ success: true });
@@ -48,4 +48,4 @@ export default async function handler(req, res) {
     console.error('Server error:', err);
     return res.status(500).json({ error: 'Server error' });
   }
-}
+};
