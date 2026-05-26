@@ -557,17 +557,45 @@
 
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeGallery(); });
 
-        function submitQuote(e) {
+        async function submitQuote(e) {
             e.preventDefault();
             const form = e.target;
-            const data = new FormData(form);
-            
-            // For now just show toast — can hook up to email API later
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            form.reset();
-            
-            setTimeout(() => toast.classList.remove('show'), 4000);
+            const btn = form.querySelector('.submit-btn');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            const body = {
+                name: form.name.value,
+                phone: form.phone.value,
+                email: form.email.value,
+                area: form.area.value,
+                service: form.service.value,
+                details: form.details.value
+            };
+
+            try {
+                const res = await fetch('/api/quote', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+
+                const toast = document.getElementById('toast');
+                if (res.ok) {
+                    toast.textContent = 'Quote request sent! We\'ll be in touch soon.';
+                    toast.classList.add('show');
+                    form.reset();
+                } else {
+                    toast.textContent = 'Something went wrong. Please call us instead!';
+                    toast.classList.add('show');
+                }
+                setTimeout(() => toast.classList.remove('show'), 4000);
+            } catch (err) {
+                alert('Could not send — please call us directly!');
+            }
+
+            btn.textContent = 'Request Free Quote';
+            btn.disabled = false;
         }
     </script>
 </body>
