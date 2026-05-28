@@ -21,19 +21,20 @@
         /* NAV */
         nav {
             background: var(--white);
-            padding: 16px 20px;
+            padding: 14px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
+            gap: 20px;
+            flex-wrap: nowrap;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-        nav .brand { font-weight: 900; color: var(--green-dark); font-size: 18px; text-decoration: none; }
-        nav a { color: var(--green); text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        nav .brand { font-weight: 900; color: var(--green-dark); font-size: 16px; text-decoration: none; white-space: nowrap; }
+        nav a { color: var(--green); text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.3s; white-space: nowrap; }
+        @media (max-width: 600px) { nav { gap: 12px; flex-wrap: wrap; } nav a { font-size: 11px; } nav .brand { font-size: 14px; } }
         nav a:hover { color: var(--green-dark); }
 
         /* HERO */
