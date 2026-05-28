@@ -26,7 +26,7 @@ module.exports = async function handler(req, res) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${'re_HNri8Euu_EBuAKn3shha8TaNSHHpNT7BY'}`
+        'Authorization': `Bearer ${'re_JbGkzmJ2_7ZBWmTn7BFeCsF5X9eZSe6Qq'}`
       },
       body: JSON.stringify({
         from: 'Backyard Brothers <onboarding@resend.dev>',
