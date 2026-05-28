@@ -10,7 +10,7 @@ module.exports = async function handler(req, res) {
   }
 
   const htmlBody = `
-    <h2>New Quote Request — Backyard Brothers</h2>
+    <h2>New Quote Request — Coast Yard Creations</h2>
     <table style="border-collapse:collapse;width:100%;max-width:500px;">
       <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Name</td><td style="padding:8px;border-bottom:1px solid #eee;">${name}</td></tr>
       <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Phone</td><td style="padding:8px;border-bottom:1px solid #eee;"><a href="tel:${phone}">${phone}</a></td></tr>
@@ -29,7 +29,7 @@ module.exports = async function handler(req, res) {
         'Authorization': `Bearer ${'re_JbGkzmJ2_7ZBWmTn7BFeCsF5X9eZSe6Qq'}`
       },
       body: JSON.stringify({
-        from: 'Backyard Brothers <onboarding@resend.dev>',
+        from: 'Coast Yard Creations <onboarding@resend.dev>',
         to: 'Mattmcl706@gmail.com',
         subject: `New Quote Request from ${name} — ${service || 'General'}`,
         html: htmlBody
