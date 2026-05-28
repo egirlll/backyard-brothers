@@ -30,7 +30,7 @@ module.exports = async function handler(req, res) {
       },
       body: JSON.stringify({
         from: 'Coast Yard Creations <onboarding@resend.dev>',
-        to: 'Mattmcl706@gmail.com',
+        to: 'mattmcl706@gmail.com',
         subject: `New Quote Request from ${name} — ${service || 'General'}`,
         html: htmlBody
       })
