@@ -28,20 +28,12 @@
 
         /* HERO */
         .hero {
-            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 50%, var(--green-light) 100%);
+            background: linear-gradient(rgba(27,67,50,0.75), rgba(45,106,79,0.75)), url('job2.jpg') center/cover no-repeat;
             color: var(--white);
-            padding: 80px 20px 60px;
+            padding: 100px 20px 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90" opacity="0.03">🌿</text></svg>') repeat;
-            background-size: 80px;
         }
 
         .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
